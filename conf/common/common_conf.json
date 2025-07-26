@@ -1,0 +1,13 @@
+{
+    "catalog_prefix": "cross_ds",
+    "project_name": "adf",
+    "aecorsoft_project_name": "aecorsoft",    
+    "app_name": "ds",
+    "data_topology_group": "DS-CrossDS",
+    "business_domain": "CROSS_DS",
+    "process_config_project_name":"DATTA",
+    "process_order":"2",
+    "process_name":"DLT_WORKFLOW",
+    "dlt_workflow_name":"sede-x-DATTA-FI-EH-workflow",
+    "fi_d_hana_dlt_workflow_name":"sede-x-DATTA-FI-EH-D-HANA-workflow"
+}

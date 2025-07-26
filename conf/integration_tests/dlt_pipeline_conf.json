@@ -1,0 +1,42 @@
+{
+    "name": "{{ dlt_pipeline_name }}",
+    "clusters": [
+        {
+            "label": "default",
+            "autoscale": {
+                "min_workers": 4,
+                "max_workers": 8,
+                "mode": "ENHANCED"
+            },
+            "node_type_id": "Standard_F8s",
+            "driver_node_type_id": "Standard_F16s_v2"
+        }
+    ],
+    "development": false,
+    "continuous": false,
+    "channel": "CURRENT",
+    "edition": "ADVANCED",
+    "photon": false,
+    "configuration": {
+        "pipeline.requirements_filepath": "{{ requirements_filepath }}",
+        "pipeline.host": "{{ host }}",
+        "pipeline.env": "{{ env }}",
+        "pipeline.unique_repo_branch_id": "{{ unique_repo_branch_id }}",
+        "pipeline.repos_path": "{{ repos_path }}",
+        "pipeline.load_type":"INIT",
+        "pipeline.full_load_source":"HANA",
+        "pipeline.delta_load_source":"AECORSOFT"
+    },
+    "libraries": [
+        {
+            "notebook": {
+                "path": "{{ repos_path }}/dlt_pipelines/install_requirements"
+            }
+        },
+        {
+            "notebook": {
+                "path": "{{ repos_path }}/dlt_pipelines/reference_pipeline_main"
+            }
+        }
+    ]
+}
